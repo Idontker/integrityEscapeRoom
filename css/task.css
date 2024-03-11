@@ -1,4 +1,4 @@
-body {
+#main-content {
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -32,11 +32,6 @@ body {
   border-radius: 2rem;
   padding: 2rem;
 }
-
-/* .container-b {
-  flex-grow: 1;
-  text-align: center;
-} */
 
 .container-b button {
   margin-top: 10px;
@@ -81,4 +76,23 @@ body {
   height: 4rem;
   width: 4rem;
   align-self: center;
+}
+
+.container input[type="text"],
+.container #input-text {
+  background-color: #535353;
+  color: rgb(45, 207, 45);
+}
+
+#aufgaben-catalog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 4rem;
+  place-items: center;
+}
+
+.hero-titel {
+  grid-column: span 3; /* Diese Syntax wird von den meisten Browsern unterstützt */
+  text-align: center;
+  letter-spacing: 0.2rem;
 }

@@ -12,33 +12,33 @@ function vigenereEncrypt(plainText, key) {
       let baseCharCode = isUpperCase ? "A".charCodeAt(0) : "a".charCodeAt(0);
       encryptedCharCode =
         ((plainCharCode + keyCharCode - baseCharCode) % 26) + baseCharCode;
-      console.log(
-        "plain:",
-        plainCharCode,
-        "base",
-        baseCharCode,
-        "diff",
-        plainCharCode - baseCharCode,
-        "key",
-        keyCharCode
-      );
-      console.log(
-        "result:",
-        encryptedCharCode,
-        "without shift",
-        encryptedCharCode - baseCharCode
-      );
+      // console.log(
+      //   "plain:",
+      //   plainCharCode,
+      //   "base",
+      //   baseCharCode,
+      //   "diff",
+      //   plainCharCode - baseCharCode,
+      //   "key",
+      //   keyCharCode
+      // );
+      // console.log(
+      //   "result:",
+      //   encryptedCharCode,
+      //   "without shift",
+      //   encryptedCharCode - baseCharCode
+      // );
     } else {
       // Für Nicht-Buchstaben
       encryptedCharCode = plainCharCode;
     }
 
-    console.log(
-      "[ENCRYPT]: from",
-      plainText[i],
-      "to",
-      String.fromCharCode(encryptedCharCode)
-    );
+    // console.log(
+    //   "[ENCRYPT]: from",
+    //   plainText[i],
+    //   "to",
+    //   String.fromCharCode(encryptedCharCode)
+    // );
 
     encryptedText += String.fromCharCode(encryptedCharCode);
   }
@@ -62,35 +62,35 @@ function vigenereDecrypt(encryptedText, key) {
       decryptedCharCode =
         ((encryptedCharCode - keyCharCode + 26 - baseCharCode) % 26) +
         baseCharCode;
-      console.log(
-        "encrypt:",
-        encryptedCharCode,
-        "base",
-        baseCharCode,
-        "diff",
-        encryptedCharCode - baseCharCode,
-        "key",
-        keyCharCode
-      );
-      console.log(
-        "result:",
-        baseCharCode,
-        "without shift",
-        baseCharCode - baseCharCode
-      );
+      // console.log(
+      //   "encrypt:",
+      //   encryptedCharCode,
+      //   "base",
+      //   baseCharCode,
+      //   "diff",
+      //   encryptedCharCode - baseCharCode,
+      //   "key",
+      //   keyCharCode
+      // );
+      // console.log(
+      //   "result:",
+      //   baseCharCode,
+      //   "without shift",
+      //   baseCharCode - baseCharCode
+      // );
     } else {
       // Für Nicht-Buchstaben
       decryptedCharCode = encryptedCharCode;
     }
 
-    console.log(
-      "[DECRYPT]: from",
-      encryptedText[i],
-      "to",
-      String.fromCharCode(decryptedCharCode)
-    );
-    console.log();
-    console.log();
+    // console.log(
+    //   "[DECRYPT]: from",
+    //   encryptedText[i],
+    //   "to",
+    //   String.fromCharCode(decryptedCharCode)
+    // );
+    // console.log();
+    // console.log();
 
     decryptedText += String.fromCharCode(decryptedCharCode);
   }
@@ -112,10 +112,31 @@ document.getElementById("encrypted-text").value = vigenereEncrypt(
 function sendText() {
   let inputText = document.getElementById("input-text").value;
   let decryptedText = vigenereDecrypt(inputText, globalKey);
-  document.getElementById("decrypted-text").value = decryptedText;
-  if (decryptedText === globalSolution) {
-    // Trigger confetti animation
-    go_confetti();
+  let ele_decryptedText = document.getElementById("decrypted-text");
+  if (ele_decryptedText) {
+    if (ele_decryptedText.classList.contains("password")) {
+      const hiddenText =
+        "// hidden text \\\\ \n" + "*".repeat(decryptedText.length);
+      ele_decryptedText.value = hiddenText;
+    } else {
+      ele_decryptedText.value = decryptedText;
+    }
+  }
+
+  if (typeof custom_checker === "function") {
+    console.log("custom checker detected ");
+    if (custom_checker(decryptedText)) {
+      go_confetti();
+      go_confetti();
+      go_confetti();
+      go_confetti();
+      go_confetti();
+    }
+  } else {
+    if (decryptedText === globalSolution) {
+      // Trigger confetti animation
+      go_confetti();
+    }
   }
 }
 
