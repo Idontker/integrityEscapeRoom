@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vigenere Cipher</title>
+    <link rel="stylesheet" href="/css/task.css" />
+    <link rel="stylesheet" href="/css/ref.css" />
+  </head>
+  <body>
+    <a href="/"><button class="home-button styled-button">Home</button></a>
+    <div class="container">
+      <div class="container-a">
+        <h1 id="pers1">Frau Höfer</h1>
+        <h2>Sender</h2>
+        <textarea id="encrypted-text" readonly></textarea>
+      </div>
+      <div class="container-b">
+        <h1>Aufgabe</h1>
+        <p id="desc"></p>
+        <br />
+        <h5 id="task"></h5>
+
+        <input type="text" id="input-text" />
+        <button onclick="sendText()">Senden</button>
+      </div>
+      <div class="container-c">
+        <h1 id="pers2">Jana</h1>
+        <h2>Empfänger</h2>
+        <textarea id="decrypted-text" readonly></textarea>
+      </div>
+    </div>
+
+    <script src="/js/my_confetti.js"></script>
+    <script src="/js/confetti.js"></script>
+    <script src="/js/ex_0.js"></script>
+    <script src="/js/load_globals.js"></script>
+  </body>
+</html>

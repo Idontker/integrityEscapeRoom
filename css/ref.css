@@ -4,10 +4,11 @@
   color: white;
   border: none;
   border-radius: 5px;
+  border: solid 1px black;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .styled-button:hover {
-  background-color: #45a049;
+  background-color: hsl(123, 40%, 40%);
 }
