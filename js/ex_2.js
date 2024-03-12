@@ -10,4 +10,4 @@ let PLAIN_TEXT =
   "Wir treffen uns heute um neun Uhr. Bitte bringen Sie dreihundert (!) Euro als Anzahlung mit.";
 let KEY = generateRandomKey_alph(1);
 let GOAL =
-  "Wir treffen uns heute um drei Uhr. Bitte bringen Sie dreihundert (!) Euro als Anzahlung mit";
+  "Wir treffen uns heute um drei Uhr. Bitte bringen Sie dreihundert (!) Euro als Anzahlung mit.";
