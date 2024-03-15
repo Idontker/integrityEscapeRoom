@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flasche Authentifikation</title>
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="/css/auth.css" />
+    <link rel="stylesheet" href="/css/ref.css" />
+
+  </head>
+  <body>
+    <section class="flex w-full py-6 md:py-12 justify-center">
+      <a href="/"><button class="home-button styled-button">Home</button></a>
+      <div class="container grid items-center gap-4 px-4 md:px-6">
+        <div class="space-y-4 text-center">
+          <div class="space-y-2">
+            <!-- title -->
+            <h2
+              id="title"
+              class="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl/none">
+              title
+            </h2>
+          </div>
+          <!-- introduction text -->
+          <div
+            class="mx-auto max-w-lg text-gray-500 dark:text-gray-400 border-gray-700 border-b-2">
+            <p id="description" class="text-base leading-loose">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde,
+              consequuntur? Rerum delectus accusamus culpa est illum ex neque
+              soluta quisquam architecto harum. Veniam incidunt facere nihil
+              voluptatem amet repudiandae neque.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="mx-auto w-full max-w-sm space-y-4 border-gray-400 border-b-2">
+          <h2 class="text-lg mx-auto text-center w-full space-y-4">
+            Verwendetes Protokoll:
+          </h2>
+          <div id="protocol" class="grid grid-cols-3 gap-2"></div>
+        </div>
+        <div class="mx-auto w-full max-w-xl space-y-4">
+          <div id="chat" class="w-full grid grid-cols-1 gap-2"></div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="m-t-4 flex flex-col w-full py-6 md:py-12 items-center gap-3">
+      <textarea id="input-text"></textarea>
+      <button class="bg-gray-100 px-4 py-2 rounded-sm" onclick="sendText()">
+        Senden
+      </button>
+    </section>
+
+    <script src="/js/my_confetti.js"></script>
+    <script src="/js/confetti.js"></script>
+    <script src="/js/auth/auth_logic.js"></script>
+    <script src="/js/auth/auth_2.js"></script>
+  </body>
+</html>

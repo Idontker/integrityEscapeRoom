@@ -15,3 +15,19 @@ function generateRandomKey_alph(length) {
   }
   return key;
 }
+
+function encryptString(message, key) {
+  return CryptoJS.AES.encrypt(message, key).toString();
+
+  const ciphertext = CryptoJS.AES.encrypt(message, key).toString();
+  return btoa(ciphertext); // Base64 encoding
+}
+
+// Decrypt function with Base64 decoding
+function decryptString(ciphertext, key) {
+  const bytes = CryptoJS.AES.decrypt(ciphertext, key);
+  return bytes.toString(CryptoJS.enc.Utf8);
+
+  const decryptedBytes = CryptoJS.AES.decrypt(atob(ciphertext), key);
+  return decryptedBytes.toString(CryptoJS.enc.Utf8);
+}
